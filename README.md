@@ -13,6 +13,7 @@ Our project will differ from the original paper in three ways. First, we aim to 
 
 The original paper also describes several approaches to solving the problem including regression, binary classification, and multi-class classification. We will be focusing on regression and hope to improve upon the results of the best regression model in the paper (3.90 RMSE for math and 2.67 RMSE for Portuguese). 
 
+We have also included a repository containing the steps to run the project in the cloud using Amazon Sagemaker. This process involves creating an Inference Pipeline containing two models, one for the preprocessing steps and one for the inference. These models are fit to the training data and deployed to a managed endpoint. The endpoint accepts data that has not been preprocessed and returns a prediction. The models support both csv and JSON formats. See the aws/ folder for more details.
 
 ## Dataset
 
@@ -63,3 +64,5 @@ You can also download the data into a folder called 'data/' by running the cells
 ## Running the notebooks
 
 To execute the cells in the notebook, press Shift-Enter when a cell is highlighted. You can also select Cells->Run All from the drop down menu to run the entire notebook. 
+
+Note that for the Amazon Sagemaker example, the notebook will need certain AWS IAM permissions and will need the ability to create a Sagemaker session. The easiest way to do this is to run the notebook on an Amazon Sagemaker managed notebook instance.
