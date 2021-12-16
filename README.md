@@ -7,7 +7,7 @@ Date: 12/2/2021
 
 This problem focuses on predicting a student's performance in school based on a number of characteristics related to the student's lifestyle, personal traits, and current living situation. The dataset focuses on student performance in two subjects, mathematics and Portuguese. Schools may be interested in a model that can accurately predict a student's performance so that they can direct resources towards students who are less likely to be successful in school in order to prevent those students from dropping out, failing classes, or falling behind their peers. 
 
-The original paper describing this problem can be found (here)[http://www3.dsi.uminho.pt/pcortez/student.pdf]. 
+The original paper describing this problem can be found [here](http://www3.dsi.uminho.pt/pcortez/student.pdf). 
 
 Our project will differ from the original paper in three ways. First, we aim to predict the final grade with high accuracy without needing the first and second period (or semester) grades. The authors of the original paper found that knowledge of the first and/or second period grades greatly improved the accuracy of the models. However, in a lot of cases, this information may be discovered at a point where it is too late for the school to help the student pass the class. As a result, we will remove the student's previous grades from consideration when building our model. Second, we want our solution to be able to generalize for schools outside of the two Portuguese schools from which the data was collected. Therefore, we will be removing the school code from considerations as well. Third, we want our solution to be able to generalize for all subjects, not just math and Portuguese, so we will be combining the two datasets into a single dataset.
 
@@ -17,7 +17,7 @@ We have also included a repository containing the steps to run the project in th
 
 ## Dataset
 
-This dataset is courtesy of the UC Irvine Machine Learning Repository and was donated in 2014. The dataset contains non-identifiable information on students from two Portuguese secondary schools. You can find the dataset and read more (here)[https://archive.ics.uci.edu/ml/datasets/Student+Performance]. 
+This dataset is courtesy of the UC Irvine Machine Learning Repository and was donated in 2014. The dataset contains non-identifiable information on students from two Portuguese secondary schools. You can find the dataset and read more [here](https://archive.ics.uci.edu/ml/datasets/Student+Performance). 
 
 The columns of the dataset are defined as follows:
 
