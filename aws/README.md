@@ -1,3 +1,5 @@
 # AWS Implementation for Student Performance
 
-This folder contains the implementation of our student performance model on Amazon Sagemaker. 
+This folder contains the implementation of our student performance model on Amazon Sagemaker. See the notebooks in the root folder for more information on how we developed our data preprocessing steps and selected a model and hyperparameters.
+
+In our local machine learning development, we found that the RandomForest algorithm produced the best results for our transformed dataset. We used the RandomForestRegressor class from scikit-learn to train our model. We also used various scikit-learn data preprocessing tools, such as ColumnTransformer, OneHotEncoder, and MinMaxScaler to transform our dataset. Amazon Sagemaker includes scikit-learn as one of its supported frameworks, which makes it much easier to recreate our locally developed model in the cloud. Instead of building a container from scratch, we can use the SKLearn pre-built container from Sagemaker and provide a training script. We also want to integrate our preprocessing steps into our deployed model, so we will create an inference pipeline. Our pipeline will first transform the input data using our preprocessing steps and then use the processed data to predict our output variable. 
