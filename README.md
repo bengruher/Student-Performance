@@ -7,16 +7,17 @@ Date: 12/2/2021
 
 This problem focuses on predicting a student's performance in school based on a number of characteristics related to the student's lifestyle, personal traits, and current living situation. The dataset focuses on student performance in two subjects, mathematics and Portuguese. Schools may be interested in a model that can accurately predict a student's performance so that they can direct resources towards students who are less likely to be successful in school in order to prevent those students from dropping out, failing classes, or falling behind their peers. 
 
-The original paper describing this problem can be found (here)[http://www3.dsi.uminho.pt/pcortez/student.pdf]. 
+The original paper describing this problem can be found [here](http://www3.dsi.uminho.pt/pcortez/student.pdf). 
 
 Our project will differ from the original paper in three ways. First, we aim to predict the final grade with high accuracy without needing the first and second period (or semester) grades. The authors of the original paper found that knowledge of the first and/or second period grades greatly improved the accuracy of the models. However, in a lot of cases, this information may be discovered at a point where it is too late for the school to help the student pass the class. As a result, we will remove the student's previous grades from consideration when building our model. Second, we want our solution to be able to generalize for schools outside of the two Portuguese schools from which the data was collected. Therefore, we will be removing the school code from considerations as well. Third, we want our solution to be able to generalize for all subjects, not just math and Portuguese, so we will be combining the two datasets into a single dataset.
 
 The original paper also describes several approaches to solving the problem including regression, binary classification, and multi-class classification. We will be focusing on regression and hope to improve upon the results of the best regression model in the paper (3.90 RMSE for math and 2.67 RMSE for Portuguese). 
 
+We have also included a repository containing the steps to run the project in the cloud using Amazon Sagemaker. This process involves creating an Inference Pipeline containing two models, one for the preprocessing steps and one for the inference. These models are fit to the training data and deployed to a managed endpoint. The endpoint accepts data that has not been preprocessed and returns a prediction. The models support both csv and JSON formats. See the aws/ folder for more details.
 
 ## Dataset
 
-This dataset is courtesy of the UC Irvine Machine Learning Repository and was donated in 2014. The dataset contains non-identifiable information on students from two Portuguese secondary schools. You can find the dataset and read more (here)[https://archive.ics.uci.edu/ml/datasets/Student+Performance]. 
+This dataset is courtesy of the UC Irvine Machine Learning Repository and was donated in 2014. The dataset contains non-identifiable information on students from two Portuguese secondary schools. You can find the dataset and read more [here](https://archive.ics.uci.edu/ml/datasets/Student+Performance). 
 
 The columns of the dataset are defined as follows:
 
@@ -63,3 +64,5 @@ You can also download the data into a folder called 'data/' by running the cells
 ## Running the notebooks
 
 To execute the cells in the notebook, press Shift-Enter when a cell is highlighted. You can also select Cells->Run All from the drop down menu to run the entire notebook. 
+
+Note that for the Amazon Sagemaker example, the notebook will need certain AWS IAM permissions and will need the ability to create a Sagemaker session. The easiest way to do this is to run the notebook on an Amazon Sagemaker managed notebook instance.
